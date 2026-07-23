@@ -11,7 +11,6 @@ import Chat from "./pages/Chat";
 function Home() {
   return (
     <div className="relative z-10 bg-[#050816] text-white min-h-screen">
-      <galaxybackground />
       <AnimatedBackground />
       <Navbar />
       <Hero />
