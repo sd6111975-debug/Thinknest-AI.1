@@ -1,22 +1,27 @@
 import { Canvas } from "@react-three/fiber";
+import { Stars } from "@react-three/drei";
 
-function Cube() {
+function GalaxyBackground() {
   return (
-    <mesh rotation={[0.5, 0.5, 0]}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color="red" />
-    </mesh>
-  );
-}
-
-export default function GalaxyBackground() {
-  return (
-    <div className="fixed inset-0 -z-10">
-      <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-        <ambientLight intensity={2} />
-        <directionalLight position={[5, 5, 5]} intensity={2} />
-        <Cube />
+    <div className="w-full h-full">
+      <Canvas
+        camera={{
+          position: [0, 0, 5],
+          fov: 75,
+        }}
+      >
+        <Stars
+          radius={100}
+          depth={50}
+          count={5000}
+          factor={4}
+          saturation={0}
+          fade
+          speed={1}
+        />
       </Canvas>
     </div>
   );
 }
+
+export default GalaxyBackground;
